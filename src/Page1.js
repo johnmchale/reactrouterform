@@ -1,18 +1,15 @@
-import { useState } from "react";
 import { Button, TextField } from "@mui/material";
 
-function Page1({ handleNext }) {
-  const [name, setName] = useState("");
-
+function Page1({ handleNext, setCustomer, customer }) {
   const handleNameChange = (event) => {
-    setName(event.target.value);
-    sessionStorage.setItem("name", event.target.value);
+    setCustomer({ ...customer, name: event.target.value });
   };
 
   return (
     <div>
       <h1>Page 1</h1>
-      <TextField id="name-input" label="Name" value={name} onChange={handleNameChange} />
+      <p>Confirm name: {customer.name}</p>
+      <TextField id="name-input" label="Name" onChange={handleNameChange} />
       <br />
       <Button variant="contained" onClick={handleNext}>
         Next

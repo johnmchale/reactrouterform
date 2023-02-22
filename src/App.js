@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { useHistory, Route, Switch } from 'react-router-dom';
 import { Stepper, Step, StepLabel } from '@mui/material';
+import { Button } from '@mui/material';
 import Page1 from './Page1';
 import Page2 from './Page2';
-import { Button } from '@mui/material';
 
 function App() {
   const [activeStep, setActiveStep] = useState(0);
   const history = useHistory();
   const steps = ['Page 1', 'Page 2'];
+  const [customer, setCustomer] = useState({});
 
   const handleNext = (path) => {
     setActiveStep(activeStep + 1);
@@ -22,10 +23,7 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const name = sessionStorage.getItem('name');
-    const email = sessionStorage.getItem('email');
-    console.log('Name:', name);
-    console.log('Email:', email);
+    console.log('Customer:', customer);
   };
 
   return (
@@ -40,10 +38,18 @@ function App() {
       <form onSubmit={handleSubmit}>
         <Switch>
           <Route exact path="/">
-            <Page1 handleNext={() => handleNext('/page2')} />
+            <Page1
+              handleNext={() => handleNext('/page2')}
+              setCustomer={setCustomer}
+              customer={customer}
+            />
           </Route>
           <Route path="/page2">
-            <Page2 handleBack={handleBack} handleNext={() => handleNext('/')} />
+            <Page2
+              handleBack={handleBack}
+              setCustomer={setCustomer}
+              customer={customer}
+            />
           </Route>
         </Switch>
         <Button variant="contained" type="submit">
