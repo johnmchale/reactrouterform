@@ -1,22 +1,23 @@
+// Page1.js
 import React from 'react';
 import { Box, Button, TextField } from '@mui/material';
 
-function Page2(props) {
-  const { handleBack, handleNext, setCustomer, customer } = props;
+function Page3(props) {
+  const { handleBack, setCustomer, customer } = props;
 
   const handlePhoneChange = (event) => {
     setCustomer((prevCustomer) => ({
       ...prevCustomer,
-      email: event.target.value,
+      phone: event.target.value,
     }));
   };
 
   return (
     <div>
       <TextField
-        label="Email"
-        name="email"
-        value={customer.email || ''}
+        label="Phone"
+        name="phone"
+        value={customer.phone || ''}
         onChange={handlePhoneChange}
         variant="outlined"
         margin="normal"
@@ -25,12 +26,9 @@ function Page2(props) {
         <Button variant="contained" onClick={handleBack}>
           Back
         </Button>
-        <Button variant="contained" onClick={handleNext}>
-          Next
-        </Button>
       </Box>
     </div>
   );
 }
 
-export default Page2;
+export default Page3;

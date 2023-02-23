@@ -1,19 +1,39 @@
-import { Button, TextField } from "@mui/material";
+// Page1.js
+import React from 'react';
+import { Box, Button, TextField } from '@mui/material';
 
-function Page1({ handleNext, setCustomer, customer }) {
+function Page1(props) {
+  const { handleNext, setCustomer, customer } = props;
+
   const handleNameChange = (event) => {
-    setCustomer({ ...customer, name: event.target.value });
+    setCustomer((prevCustomer) => ({
+      ...prevCustomer,
+      name: event.target.value,
+    }));
   };
 
   return (
     <div>
-      <h1>Page 1</h1>
-      <p>Confirm name: {customer.name}</p>
-      <TextField id="name-input" label="Name" onChange={handleNameChange} />
-      <br />
-      <Button variant="contained" onClick={handleNext}>
-        Next
-      </Button>
+      <TextField
+        label="Name"
+        name="name"
+        value={customer.name || ''}
+        onChange={handleNameChange}
+        variant="outlined"
+        margin="normal"
+      />
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          mt: 2,
+          alignItems: 'flex-start',
+        }}
+      >
+        <Button variant="contained" onClick={handleNext} sx={{ mb: 2 }}>
+          Next
+        </Button>
+      </Box>
     </div>
   );
 }
