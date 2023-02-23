@@ -4,7 +4,7 @@ import { Box, Button, TextField } from '@mui/material';
 function Page2(props) {
   const { handleBack, handleNext, setCustomer, customer } = props;
 
-  const handlePhoneChange = (event) => {
+  const handleEmailChange = (event) => {
     setCustomer((prevCustomer) => ({
       ...prevCustomer,
       email: event.target.value,
@@ -17,7 +17,7 @@ function Page2(props) {
         label="Email"
         name="email"
         value={customer.email || ''}
-        onChange={handlePhoneChange}
+        onChange={handleEmailChange}
         variant="outlined"
         margin="normal"
       />
