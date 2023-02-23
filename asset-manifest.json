@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/reactrouterform/static/css/main.e6c13ad2.css",
+    "main.js": "/reactrouterform/static/js/main.f78bb70b.js",
+    "static/js/787.6a4c4744.chunk.js": "/reactrouterform/static/js/787.6a4c4744.chunk.js",
+    "index.html": "/reactrouterform/index.html",
+    "main.e6c13ad2.css.map": "/reactrouterform/static/css/main.e6c13ad2.css.map",
+    "main.f78bb70b.js.map": "/reactrouterform/static/js/main.f78bb70b.js.map",
+    "787.6a4c4744.chunk.js.map": "/reactrouterform/static/js/787.6a4c4744.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.f78bb70b.js"
+  ]
+}
